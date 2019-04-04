@@ -7,5 +7,12 @@
   "devDependencies": {
     "html-minifier": "^4.0.0",
     "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "build": "$(yarn bin)/html-minifier -c config/html-minifier.conf --input-dir=src/html --output-dir=site/",
+    "serve": "yarn build && $(yarn bin)/http-server site",
+    "xupload": "aws s3 sync --cache-control=\"max-age=3600\" --profile=personal site/ s3://whatdavesaid.com",
+    "upload": "aws s3 sync --profile=personal site/ s3://whatdavesaid.com",
+    "invalidate": "aws cloudfront create-invalidation --profile=personal --distribution-id=E8T2XNPHWMAQO --paths=/index.html"
   }
 }
