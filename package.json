@@ -1,0 +1,11 @@
+{
+  "name": "whatdavesaid.com",
+  "version": "1.0.0",
+  "description": "What Dave Said",
+  "author": "David Copeland",
+  "private": true,
+  "devDependencies": {
+    "html-minifier": "^4.0.0",
+    "http-server": "^0.11.1"
+  }
+}
